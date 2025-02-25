@@ -14,7 +14,14 @@ date_info <- data.frame(
 )
 date_info
 
-
+# Question 2: Given the following dates, compute the difference in months and weeks between each consecutive pair.
+sample_dates <- ymd(c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05"))
+map2(sample_dates[-length(sample_dates)], sample_dates[-1], ~ {
+  list(
+    Month_Diff = interval(.x, .y) %/% months(1),
+    Week_Diff = interval(.x, .y) %/% weeks(1)
+  )
+})
 
 
 
