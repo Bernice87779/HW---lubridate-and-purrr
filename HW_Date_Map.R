@@ -23,6 +23,15 @@ map2(sample_dates[-length(sample_dates)], sample_dates[-1], ~ {
   )
 })
 
+# Question 3: Using map() and map_dbl(), compute the mean, median, and standard deviation for each numeric vector in the following list:
+num_lists <- list(c(4, 16, 25, 36, 49), c(2.3, 5.7, 8.1, 11.4), c(10, 20, 30, 40, 50))
+
+list(
+  Mean = paste(map_dbl(num_lists, mean), collapse = ", "),
+  Median = paste(map_dbl(num_lists, median), collapse = ", "),
+  SD = paste(map_dbl(num_lists, sd), collapse = ", ")
+)
+
 
 
 
